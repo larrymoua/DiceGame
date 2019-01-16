@@ -79,7 +79,7 @@ function pullingBoss(randomBoss){
 		bossAttributes[1] = rollDie(10, 100);
 		bossAttributes[2] = rollDie(4, 2);
 		console.log("Boss level ???  " + randomBoss.toUpperCase() + "    Healthpoints:  " + bossAttributes[1] +" Spell Dmg:  " + bossAttributes[0] +" PhysicalDamage:  "+ bossAttributes[2]);
-		alert("A wild  " + randomBoss + " has appeared!");
+		alert("A wild " + randomBoss + " has appeared!");
 		return bossAttributes;
 	}
 		if(randomBoss === boss[1]){
@@ -87,7 +87,7 @@ function pullingBoss(randomBoss){
 			bossAttributes[1] = rollDie(10, 105);
 			bossAttributes[2] = rollDie(10, 0);
 			console.log("Boss level ???  " + randomBoss.toUpperCase() + "    Healthpoints:  " + bossAttributes[1] +" Spell Dmg:  " + bossAttributes[0] +" PhysicalDamage:  "+ bossAttributes[2]);
-			alert("A wild  " + randomBoss + " has appeared!");
+			alert("A wild " + randomBoss + " has appeared!");
 			return bossAttributes;
 		}
 		if(randomBoss === boss[2]){
@@ -95,7 +95,7 @@ function pullingBoss(randomBoss){
 			bossAttributes[1] = rollDie(10, 110 );
 			bossAttributes[2] = rollDie(10, 0);
 			console.log("Boss level ???  " + randomBoss.toUpperCase() + "    Healthpoints:  " + bossAttributes[1] +" Spell Dmg:  " + bossAttributes[0] +" PhysicalDamage:  "+ bossAttributes[2]);
-			alert("A wild  " + randomBoss + " has appeared!");
+			alert("A wild " + randomBoss + " has appeared!");
 			return bossAttributes;
 		}
 		if(randomBoss === boss[3]){
@@ -103,7 +103,7 @@ function pullingBoss(randomBoss){
 			bossAttributes[1] = rollDie(10, 115 );
 			bossAttributes[2] = rollDie(10, 0);
 			console.log("Boss level ???  " + randomBoss.toUpperCase() + "    Healthpoints:  " + bossAttributes[1] +" Spell Dmg:  " + bossAttributes[0] +" PhysicalDamage:  "+ bossAttributes[2]);
-			alert("A wild  " + randomBoss + " has appeared!");
+			alert("A wild " + randomBoss + " has appeared!");
 			return bossAttributes;
 		}
 }
@@ -178,6 +178,6 @@ function bandage(healCharacter, bossAttk){
 	healCharacter[1] = healCharacter[1] + healCharacter[3];
 	bossAttk[1] = bossAttk[1] - bossAttk[3];
 	healCharacter.splice(3);
-	console.log("You healed for "+ healthRecovered + "hp."+ '\n' + characterChosen + " HealthPoints:  " + healCharacter[1]+ "     " + chosenBoss + " HealthPoints : " + bossAttk[1]);
+	console.log("You healed for "+ healthRecovered + "hp."+ '\n' + chosenBoss + "hit you for " + bossTotalDamage + " damage." + '\n\n' + characterChosen + " HealthPoints:  " + healCharacter[1]+ "     " + chosenBoss + " HealthPoints : " + bossAttk[1]);
 	return;
 }
