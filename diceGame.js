@@ -11,12 +11,12 @@ checkingIfWinOrLost();
 function attackOptions(){
 
 	while(bossCreated[1] > 0 && characterCreated[1] > 0){
-		let input = prompt("Enter attack / bandage(heals 10-20 hP) / stop (Ends Game)")
-		if(input == "attack"){
+		let input = prompt("(1) attack  (2) coffee(heals 10-20 hP)  Type stop (Ends Game)")
+		if(input == "1"){
 			attacks(characterCreated, bossCreated);
 		}
-		else if(input == "bandage"){
-			bandage(characterCreated);
+		else if(input == "2"){
+			bandage(characterCreated, bossCreated);
 		}
 		else if(input =="stop"){
 			return;
@@ -30,17 +30,17 @@ function attackOptions(){
 function checkingIfWinOrLost(){
 
 	if (bossCreated[1] === 0 || bossCreated[1] < 0){
-		alert("You defeated " + chosenBoss + "! (refresh page to restart game)");
+		alert("You successfully deBuged " + chosenBoss + "! (refresh page to restart game)");
 	}
 	if (characterCreated[1] === 0 ||characterCreated[1] < 0) {
 		console.log(bossCreated[1]);
-		alert("You have been slain by " +chosenBoss+ "! (refresh page to restart game)");
+		alert("You have been defeated.  " +chosenBoss+ " has fried your brain! Get some rest.. (refresh page to restart game)");
 	}
 	if (bossCreated[1] < 0){
-		console.log("OverKill " + bossCreated[1] + " damage!");
+		console.log("You overDebug " + bossCreated[1] + " damage to " + chosenBoss);
 	}
 	if (characterCreated[1] < 0){
-	console.log("Your dead! OverKill " + characterCreated[1] + " damage!");
+		console.log("You lose!" + characterCreated[1] + " overFried damage from " + chosenBoss + "!");
 	}	
 }
 
@@ -170,11 +170,14 @@ function attacks(character, bossHp){
 }
 	
 
-function bandage(healCharacter){
+function bandage(healCharacter, bossAttk){
 	let healthRecovered = rollDie(10, 10);
+	let bossTotalDamage = bossAttk[0]+bossAttk[2];
 	healCharacter.push(healthRecovered);
+	bossAttk.push(bossTotalDamage);
 	healCharacter[1] = healCharacter[1] + healCharacter[3];
+	bossAttk[1] = bossAttk[1] - bossAttk[3];
 	healCharacter.splice(3);
-	console.log("You healed for "+ healthRecovered + "hp."+ '\n' + characterChosen + "HealthPoints:  " + healCharacter[1])
+	console.log("You healed for "+ healthRecovered + "hp."+ '\n' + characterChosen + " HealthPoints:  " + healCharacter[1]+ "     " + chosenBoss + " HealthPoints : " + bossAttk[1]);
 	return;
 }
