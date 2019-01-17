@@ -11,18 +11,18 @@ checkingIfWinOrLost();
 function attackOptions(){
 
 	while(bossCreated[1] > 0 && characterCreated[1] > 0){
-		let input = prompt("(1) attack  (2) coffee(heals 10-20 hP)  Type stop (Ends Game)")
+		let input = prompt("(1) attack  (2) coffee(heals 10-20 hP)  Type run (Ends Game)")
 		if(input == "1"){
 			attacks(characterCreated, bossCreated);
 		}
 		else if(input == "2"){
 			bandage(characterCreated, bossCreated);
 		}
-		else if(input =="stop"){
+		else if(input =="run"){
 			return;
 		}
 		else{
-			alert("Invalid input!! Please speak javascript");
+			alert("Invalid input!! Please try again.");
 		}
 	}
 }
